@@ -101,7 +101,7 @@ const displayProductDetail = (detail) => {
             </div>
             <div class="space-x-3">
               <button class="btn btn-outline btn-primary">Buy Now</button>
-              <button class="btn btn-primary"><i class=" fa-solid fa-cart-shopping"></i> Add to Cart</button>
+              <button onclick="addToCart(${detail.id})" class="btn btn-primary"><i class=" fa-solid fa-cart-shopping"></i> Add to Cart</button>
             </div>
 
   `;
@@ -135,13 +135,54 @@ const productCard = (product) => {
             </div>
              <div class="card-action flex justify-between items-center gap-3 mt-auto">
                 <button onclick="loadProductDetail(${product.id})" class="btn col-span-1 w-1/2"><i class="fa-solid fa-eye"></i>  Details</button>
-                 <button class="btn btn-primary w-1/2"><i class="fa-solid fa-cart-shopping"></i>   Add</button>
+                 <button onclick="addToCart(${product.id})" class="btn btn-primary w-1/2"><i class="fa-solid fa-cart-shopping"></i>   Add</button>
               </div>
              </div>
          </div>
     `;
   return cardDiv
 }
+
+//  product add to card and success massege show
+
+ showToast = (message)=> {
+  const container = document.getElementById("toast-container");
+
+  const toast = document.createElement("div");
+  toast.className =
+    "bg-[#422AD5] flex items-center justify-center gap-2 text-white px-6 py-3 rounded shadow-lg mb-3 transform translate-x-full transition-transform duration-300";
+
+  toast.innerHTML = message;
+
+  container.appendChild(toast);
+
+
+  setTimeout(() => {
+  toast.classList.remove("translate-x-full");
+}, 100);
+
+setTimeout(() => {
+  toast.classList.add("translate-x-full");
+  setTimeout(() => toast.remove(), 300);
+}, 3000);
+}
+
+const cartCount = document.getElementById("cart-count");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+updateCartCount();
+
+function addToCart(id) {
+  cart.push(id);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  showToast(`<i class="text-xl fa-regular fa-circle-check"></i> Product added to cart!`);
+}
+
+function updateCartCount() {
+  cartCount.innerText = cart.length;
+}
+
 
 
 // Get Top rated Products from all products by filter method
