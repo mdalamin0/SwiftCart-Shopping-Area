@@ -8,6 +8,12 @@
   background-color: #422AD5;
   color: white;
 }
+.active2{
+  color: #422AD5;
+}
+.active3{
+  color: #422AD5;
+}
 
 .small{
   position: absolute;
@@ -17,4 +23,10 @@
   position: absolute;
   right: 15px;
   top: 15px;
+}
+
+.badge-area{
+  position: absolute;
+  top: -10px;
+  right: -5px;
 }

@@ -1,3 +1,34 @@
+//  desktop menu and page control
+ showSection = (section)=> {
+    document.getElementById("home-section").classList.add("hidden");
+    document.getElementById("product-section").classList.add("hidden");
+     // remove active from all page
+    document.getElementById("homeBtn").classList.remove("active2");
+    document.getElementById("productBtn").classList.remove("active2");
+
+    if (section === "home") {
+      document.getElementById("home-section").classList.remove("hidden");
+      document.getElementById("homeBtn").classList.add("active2");
+    } else if (section === "product") {
+      document.getElementById("product-section").classList.remove("hidden");
+       document.getElementById("productBtn").classList.add("active2");
+    }
+    activeBtn(section)
+  }
+
+  // mobile menu active
+   activeBtn = (section)=> {
+     // remove active from all page
+    document.getElementById("mobileHomeBtn").classList.remove("active3");
+    document.getElementById("mobileProductBtn").classList.remove("active3");
+
+    if (section === "home") {
+      document.getElementById("mobileHomeBtn").classList.add("active3");
+    } else if (section === "product") {
+       document.getElementById("mobileProductBtn").classList.add("active3");
+    }
+  }
+
 // Get All Products
 const loadAllProducts = () => {
   const url = "https://fakestoreapi.com/products";
