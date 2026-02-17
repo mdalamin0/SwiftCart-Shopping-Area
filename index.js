@@ -46,6 +46,35 @@ const loadCategories = (cate) => {
     });
 }
 
+// Load product detail
+const loadProductDetail = async (id) => {
+  const url = `https://fakestoreapi.com/products/${id}`;
+  const res = await fetch(url);
+  const details = await res.json();
+  displayProductDetail(details)
+}
+
+// display product detail
+
+const displayProductDetail = (detail) => {
+  const detailContainer = document.getElementById("product-detail-container");
+  detailContainer.innerHTML = `
+ <div class="space-y-3">
+              <h2 class="text-xl font-bold">${detail?.title}</h2>
+              <p class="font-medium text-gray-500 text-sm">${detail?.description}</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <h2 class="font-bold text-xl">$${detail?.price}</h2>
+               <p class="text-gray-600 font-semibold">(<i class="fa-solid fa-star text-amber-500"></i>${detail?.rating?.rate})</p>
+            </div>
+            <div class="space-x-3">
+              <button class="btn btn-outline btn-primary">Buy Now</button>
+              <button class="btn btn-primary"><i class=" fa-solid fa-cart-shopping"></i> Add to Cart</button>
+            </div>
+
+  `;
+  document.getElementById("product_detail").showModal()
+}
 
 const productCard = (product) => {
   const shortDescription =
@@ -73,7 +102,7 @@ const productCard = (product) => {
              <h2 class="text-2xl font-bold mb-5">$${product?.price}</h2>
             </div>
              <div class="card-action flex justify-between items-center gap-3 mt-auto">
-                <button class="btn col-span-1 w-1/2"><i class="fa-solid fa-eye"></i>  Details</button>
+                <button onclick="loadProductDetail(${product.id})" class="btn col-span-1 w-1/2"><i class="fa-solid fa-eye"></i>  Details</button>
                  <button class="btn btn-primary w-1/2"><i class="fa-solid fa-cart-shopping"></i>   Add</button>
               </div>
              </div>

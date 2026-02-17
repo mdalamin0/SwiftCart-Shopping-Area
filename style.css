@@ -8,3 +8,13 @@
   background-color: #422AD5;
   color: white;
 }
+
+.small{
+  position: absolute;
+  top: -25px;
+}
+.close-btn{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}

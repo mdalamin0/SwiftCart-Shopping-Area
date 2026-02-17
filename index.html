@@ -85,19 +85,16 @@
           <h2 class="text-4xl font-bold">Why Choose Us</h2>
           <p class="text-gray-500 font-semibold">We provide the best shoping experience with top-notch services.</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 ">
           <!-- Card 1 -->
-          <div class="bg-gray-50 p-6 rounded-xl  h-full  flex flex-col ">
-            <div class="">
-              <div
-                class="border-3 shadow-md w-12 h-12 mt-[-50px] border-amber-50 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
-                <i class="fa-solid fa-truck-arrow-right"></i>
-              </div>
+          <div class="relative bg-gray-50 p-6 rounded-xl  h-full  flex flex-col ">
+            <div
+              class="small border-3 shadow-md w-12 h-12  border-amber-50 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
+              <i class="fa-solid fa-truck-arrow-right"></i>
             </div>
             <div class="space-y-3 mt-5">
               <div>
                 <h3 class="text- font-bold">Fast Delivery</h3>
-
               </div>
               <div>
                 <p class="text-gray-500 text-sm font-semibold flex-grow">
@@ -105,16 +102,13 @@
                 </p>
               </div>
             </div>
-
           </div>
 
           <!-- Card 2 -->
-          <div class="bg-gray-50 p-6 rounded-xl h-full flex flex-col ">
-            <div class="">
-              <div
-                class="border-3 shadow-md w-12 h-12 mt-[-50px] border-amber-50 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
-                <i class="fa-regular fa-headphones"></i>
-              </div>
+          <div class="relative bg-gray-50 p-6 rounded-xl h-full flex flex-col ">
+            <div
+              class="small border-3 shadow-md w-12 h-12 border-amber-50 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
+              <i class="fa-regular fa-headphones"></i>
             </div>
             <div class="space-y-3 mt-5">
               <div>
@@ -126,15 +120,12 @@
                 </p>
               </div>
             </div>
-
           </div>
           <!-- Card 3 -->
-          <div class="bg-gray-50 p-6 rounded-xl h-full flex flex-col ">
-            <div class="">
-              <div
-                class="border-3 shadow-md w-12 h-12 mt-[-50px] border-amber-50 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
-                <img src="./Assets/sheild-check.png" alt="">
-              </div>
+          <div class="relative bg-gray-50 p-6 rounded-xl h-full flex flex-col ">
+            <div
+              class="small border-3 shadow-md w-12 h-12  border-amber-50 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
+              <img src="./Assets/sheild-check.png" alt="">
             </div>
             <div class="space-y-3 mt-5">
               <div>
@@ -149,10 +140,10 @@
 
           </div>
           <!-- card- 4-->
-          <div class="bg-gray-50 p-6 rounded-xl  h-full  flex flex-col ">
+          <div class="relative bg-gray-50 p-6 rounded-xl  h-full  flex flex-col ">
             <div class="">
               <div
-                class="border-3 shadow-md w-12 h-12 mt-[-50px] border-amber-50 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
+                class="small border-3 shadow-md w-12 h-12  border-amber-50 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
                 <i class="fa-solid fa-arrows-rotate"></i>
               </div>
             </div>
@@ -179,14 +170,29 @@
 
       </div>
     </section>
+    <!-- modal section-->
+    <section>
+      <dialog id="product_detail" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box relative">
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="close-btn cursor-pointer"><i class="text-gray-900 text-2xl fa-solid fa-circle-xmark"></i></button>
+            </form>
+          </div>
+          <div id="product-detail-container" class="space-y-5 px-5 py-5">
+           
+          </div>
+        </div>
+      </dialog>
+    </section>
     <!--  Category Section-->
-     <section class="w-10/12 mx-auto my-8">
+    <section class="w-10/12 mx-auto my-8">
       <div>
         <h1 class="text-3xl font-bold text-center">Our Products</h1>
       </div>
       <div id="all-categories" class="flex justify-center flex-wrap gap-4 my-7"></div>
-     </section>
-       <section class="w-10/12 mx-auto mt-14">
+    </section>
+    <section class="w-10/12 mx-auto mt-14">
       <div id="category-product-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
 
       </div>
