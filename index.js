@@ -135,7 +135,7 @@ const productCard = (product) => {
             </div>
              <div class="card-action flex justify-between items-center gap-3 mt-auto">
                 <button onclick="loadProductDetail(${product.id})" class="btn col-span-1 w-1/2"><i class="fa-solid fa-eye"></i>  Details</button>
-                 <button onclick="addToCart(${product.id})" class="btn btn-primary w-1/2"><i class="fa-solid fa-cart-shopping"></i>   Add</button>
+                 <button onclick="addItemToLocalStorage(${product.id})" class="btn btn-primary w-1/2"><i class="fa-solid fa-cart-shopping"></i>   Add</button>
               </div>
              </div>
          </div>
@@ -168,19 +168,39 @@ setTimeout(() => {
 }
 
 const cartCount = document.getElementById("cart-count");
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-updateCartCount();
-
-function addToCart(id) {
-  cart.push(id);
-  localStorage.setItem("cart", JSON.stringify(cart));
+// let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const getCartFromLocalStorage = () => {
+  const storeCartString = localStorage.getItem('cart');
+  if(storeCartString){
+    const storeCart = JSON.parse(storeCartString);
+    return storeCart
+  }
+  return [];
+}
+const saveCartToLocalStorage = (cart) => {
+  const cartStringified = JSON.stringify(cart)
+  localStorage.setItem('cart', cartStringified)
   updateCartCount();
   showToast(`<i class="text-xl fa-regular fa-circle-check"></i> Product added to cart!`);
 }
+const addItemToLocalStorage = (id) => {
+  const cartData = getCartFromLocalStorage();
+  const newCart = [...cartData, id]
+  saveCartToLocalStorage(newCart)
+}
+
+updateCartCount();
+
+// function addToCart(id) {
+//   cart.push(id);
+//   localStorage.setItem("cart", JSON.stringify(cart));
+//   updateCartCount();
+//   showToast(`<i class="text-xl fa-regular fa-circle-check"></i> Product added to cart!`);
+// }
 
 function updateCartCount() {
-  cartCount.innerText = cart.length;
+  const storedCart = getCartFromLocalStorage();
+  cartCount.innerText = storedCart.length;
 }
 
 

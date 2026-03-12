@@ -16,3 +16,6 @@ asynchronous হলো জাভাস্ক্রিপ্টে কোন ক�
 5) Explain the concept of Scope in JavaScript (Global, Function, Block).
 
 স্কোপ হলে কোন একটা জায়গা, মানে কোন variable কোন স্কোপে আছে সেটা। কোন একটা variable যদি গ্লোবাল স্কোপে মানে কোন ফাংশনের  ভিতর বা কোন ব্লকের ভেতর না থাকে তাহলে সেটাকে যেকোন জায়গা থেকে access করা যাবে।  আর function স্কোপ মানে সেই ফাংশনের ভিতরেই কোন variable থাকলে তা access করা যাবে। বাহির থেকে করা যাবে না।  কিন্তু var কোন স্কোপ মানে না।  ব্লক স্কোপ মানে হলো শুধু মাত্র ঐ ব্লকের { } মাঝেই access করা যাবে অন্য কোথাও থেকে না।
+
+Live Link: https://lambent-platypus-4db760.netlify.app/
+GitHub Link: https://github.com/mdalamin0/SwiftCart-Shopping-Area
