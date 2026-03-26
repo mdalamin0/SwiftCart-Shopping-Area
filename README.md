@@ -1,5 +1,6 @@
 Project: SwiftCart Shopping Area
 GitHub link: https://github.com/mdalamin0/SwiftCart-Shopping-Area/tree/main
+Live link: https://swift-cart-shopping-area.vercel.app/
 
 Technologies: HTML5, Tailwind CSS, JavaScript(ES6+)
 
