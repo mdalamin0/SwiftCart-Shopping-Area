@@ -1,33 +1,33 @@
 
- showSection = (section) => {
+showSection = (section) => {
 
-    // ===== Section show/hide =====
-    document.getElementById("home-section").classList.add("hidden");
-    document.getElementById("product-section").classList.add("hidden");
+  // ===== Section show/hide =====
+  document.getElementById("home-section").classList.add("hidden");
+  document.getElementById("product-section").classList.add("hidden");
 
-    document.getElementById(section + "-section").classList.remove("hidden");
-
-
-    // ===== Active class remove (desktop) =====
-    document.getElementById("homeBtn").classList.remove("active2");
-    document.getElementById("productBtn").classList.remove("active2");
-
-    // ===== Active class remove (mobile) =====
-    document.getElementById("mobileHomeBtn").classList.remove("active3");
-    document.getElementById("mobileProductBtn").classList.remove("active3");
+  document.getElementById(section + "-section").classList.remove("hidden");
 
 
-    // ===== Active class add =====
-    if(section === "home"){
-      document.getElementById("homeBtn").classList.add("active2");
-      document.getElementById("mobileHomeBtn").classList.add("active3");
-    }
-    else if(section === "product"){
-      document.getElementById("productBtn").classList.add("active2");
-      document.getElementById("mobileProductBtn").classList.add("active3");
-    }
+  // ===== Active class remove (desktop) =====
+  document.getElementById("homeBtn").classList.remove("active2");
+  document.getElementById("productBtn").classList.remove("active2");
 
+  // ===== Active class remove (mobile) =====
+  document.getElementById("mobileHomeBtn").classList.remove("active3");
+  document.getElementById("mobileProductBtn").classList.remove("active3");
+
+
+  // ===== Active class add =====
+  if (section === "home") {
+    document.getElementById("homeBtn").classList.add("active2");
+    document.getElementById("mobileHomeBtn").classList.add("active3");
   }
+  else if (section === "product") {
+    document.getElementById("productBtn").classList.add("active2");
+    document.getElementById("mobileProductBtn").classList.add("active3");
+  }
+
+}
 
 
 // Get All Products
@@ -145,7 +145,7 @@ const productCard = (product) => {
 
 //  product add to card and success massege show
 
- showToast = (message)=> {
+showToast = (message) => {
   const container = document.getElementById("toast-container");
 
   const toast = document.createElement("div");
@@ -158,20 +158,20 @@ const productCard = (product) => {
 
 
   setTimeout(() => {
-  toast.classList.remove("translate-x-full");
-}, 100);
+    toast.classList.remove("translate-x-full");
+  }, 100);
 
-setTimeout(() => {
-  toast.classList.add("translate-x-full");
-  setTimeout(() => toast.remove(), 300);
-}, 3000);
+  setTimeout(() => {
+    toast.classList.add("translate-x-full");
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
 }
 
 const cartCount = document.getElementById("cart-count");
 // let cart = JSON.parse(localStorage.getItem("cart")) || [];
 const getCartFromLocalStorage = () => {
   const storeCartString = localStorage.getItem('cart');
-  if(storeCartString){
+  if (storeCartString) {
     const storeCart = JSON.parse(storeCartString);
     return storeCart
   }
@@ -238,6 +238,9 @@ const displayAllCategories = (categories) => {
 
   allButton.addEventListener("click", () => {
     loadAllProducts();
+    removeActiveClass()
+    const activeCategoryBtn = document.getElementById(`category-btn-all`)
+    activeCategoryBtn.classList.add('active')
   });
 
   allBtnDiv.appendChild(allButton);
@@ -256,6 +259,7 @@ const displayAllCategories = (categories) => {
 
     button.addEventListener("click", () => {
       loadCategories(category);
+
     });
 
     btnCategory.appendChild(button);

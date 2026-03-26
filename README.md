@@ -1,3 +1,22 @@
+Project: SwiftCart Shopping Area
+GitHub link: https://github.com/mdalamin0/SwiftCart-Shopping-Area/tree/main
+
+Technologies: HTML5, Tailwind CSS, JavaScript(ES6+)
+
+Description: Developed a responsive e-commerce shopping interface where users can browse products, filter items by category, and manage their shopping cart using dynamic JavaScript functionality.
+
+Features:
+
+• Displayed all products in a responsive product card layout
+• Filtered top-rated products from the full product list and displayed them as a "Trending Products" section
+• Implemented category-based product filtering on the product page
+• Each product card includes "Details" and "Add to Cart" buttons
+• Clicking the "Details" button opens a product details modal with additional information
+• Implemented shopping cart functionality using JavaScript
+• Products added to the cart are stored in Local Storage to persist data after page reload
+• Built a fully responsive UI for mobile, tablet, and desktop devices
+
+
 1) What is the difference between null and undefined?
 Ans: Undefined হচ্ছে এমন কোন Variable যেটা ডিক্লেয়ার করা হয়ছে কিন্তু কোন মান সেটা করা হয়নি এবং Undefined জাভাস্ক্রিপ্ট নিজে সেট করে কোন ভ্যালু না পেলে। 
 Null হচ্ছে ডেভেলপার নিজেই কোন Variable এর মান ইচ্ছে করে খালি রেখেছে এবং এটি ডেভেলপার কতৃক দেওয়া হয়।
@@ -17,5 +36,3 @@ asynchronous হলো জাভাস্ক্রিপ্টে কোন ক�
 
 স্কোপ হলে কোন একটা জায়গা, মানে কোন variable কোন স্কোপে আছে সেটা। কোন একটা variable যদি গ্লোবাল স্কোপে মানে কোন ফাংশনের  ভিতর বা কোন ব্লকের ভেতর না থাকে তাহলে সেটাকে যেকোন জায়গা থেকে access করা যাবে।  আর function স্কোপ মানে সেই ফাংশনের ভিতরেই কোন variable থাকলে তা access করা যাবে। বাহির থেকে করা যাবে না।  কিন্তু var কোন স্কোপ মানে না।  ব্লক স্কোপ মানে হলো শুধু মাত্র ঐ ব্লকের { } মাঝেই access করা যাবে অন্য কোথাও থেকে না।
 
-Live Link: https://lambent-platypus-4db760.netlify.app/
-GitHub Link: https://github.com/mdalamin0/SwiftCart-Shopping-Area
